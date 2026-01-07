@@ -253,7 +253,10 @@ public class MatchTransition: InteractiveTransition {
         case .began:
             UIImpactFeedbackGenerator(style: .light).impactOccurred()
             beginInteractiveTransition()
-            if context == nil, let navigationView = view.navigationView, navigationView.views.count > 1 {
+            // Also trigger popView if context exists but animation isn't running (stale state)
+            let shouldPop = context == nil || (context != nil && !isAnimating)
+            
+            if shouldPop, let navigationView = view.navigationView, navigationView.views.count > 1 {
                 navigationView.popView(animated: true)
             }
             totalTranslation = .zero
