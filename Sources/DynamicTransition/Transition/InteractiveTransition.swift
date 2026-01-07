@@ -95,7 +95,7 @@ open class InteractiveTransition: NSObject, Transition {
 
     public func animateTo(position: TransitionEndPosition) {
         guard let animator, let context else {
-            assertionFailure()
+            print()
             return
         }
         if isInteractive {
@@ -108,7 +108,7 @@ open class InteractiveTransition: NSObject, Transition {
     
     public func forceCompletion(position: TransitionEndPosition) {
         guard let animator, let context else {
-            assertionFailure()
+            print()
             return
         }
         if isInteractive {

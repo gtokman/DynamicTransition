@@ -50,7 +50,7 @@ public class TransitionAnimator {
 
     public func animateTo(position: TransitionEndPosition) {
         guard targetPosition == nil else {
-            assertionFailure("You should pause the animation before starting another animation")
+            print("You should pause the animation before starting another animation")
             return
         }
         targetPosition = position
@@ -70,7 +70,7 @@ public class TransitionAnimator {
     
     public func forceCompletion(position: TransitionEndPosition) {
         guard targetPosition == nil else {
-            assertionFailure("You should pause the animation before forcing completion")
+            print("You should pause the animation before forcing completion")
             return
         }
         targetPosition = position

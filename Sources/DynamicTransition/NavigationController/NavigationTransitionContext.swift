@@ -35,7 +35,7 @@ public class NavigationTransitionContext: TransitionContext {
 
     public func completeTransition() {
         guard !isCompleted else {
-            assertionFailure("Transition is already completed")
+            print("Transition is already completed")
             return
         }
         isCompleted = true
@@ -51,7 +51,7 @@ public class NavigationTransitionContext: TransitionContext {
 
     public func beginInteractiveTransition() {
         guard !isCompleted else {
-            assertionFailure("Transition is already completed")
+            print("Transition is already completed")
             return
         }
         isInteractive = true
@@ -59,7 +59,7 @@ public class NavigationTransitionContext: TransitionContext {
 
     public func endInteractiveTransition(_ isCompleting: Bool) {
         guard !isCompleted else {
-            assertionFailure("Transition is already completed")
+            print("Transition is already completed")
             return
         }
         isInteractive = false

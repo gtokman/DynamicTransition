@@ -44,7 +44,7 @@ open class NavigationView: UIView, RootViewType {
                 return source + [vc]
             case .dismiss(let vc):
                 guard let index = source.firstIndex(of: vc) else {
-                    assertionFailure("The View doesn't exist in the NavigationController's stack")
+                    print("The View doesn't exist in the NavigationController's stack")
                     return source
                 }
                 return source[0..<max(1, index)].array
@@ -54,7 +54,7 @@ open class NavigationView: UIView, RootViewType {
                 return [source.first!]
             case .set(let vcs):
                 guard !vcs.isEmpty else {
-                    assertionFailure("Cannot set empty view controllers to NavigationController")
+                    print("Cannot set empty view controllers to NavigationController")
                     return source
                 }
                 return vcs
